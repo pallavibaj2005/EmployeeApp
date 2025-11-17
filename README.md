@@ -1,55 +1,56 @@
-🚀 EmployeeApp – Spring Boot Employee Management (REST + Thymeleaf)
+<!-- 
+    EmployeeApp README – Stylish & Clean
+    Designed by pallavibaj2005
+-->
 
-EmployeeApp is a lightweight Spring Boot application built using a clean Model–Service–Controller (MSC) architecture.
-It provides both REST APIs for employee data access and a simple Thymeleaf UI for displaying employee details.
+<p align="center">
+  <img src="https://img.shields.io/badge/Spring%20Boot-2.7%2B-brightgreen?logo=springboot" alt="Spring Boot Badge"/>
+  <img src="https://img.shields.io/badge/Java-17%2B-orange?logo=openjdk" alt="Java Badge"/>
+  <img src="https://img.shields.io/badge/Maven-build-blue?logo=apachemaven" alt="Maven Badge"/>
+  <img src="https://img.shields.io/badge/Thymeleaf-UI-green?logo=thymeleaf" alt="Thymeleaf Badge"/>
+</p>
 
+<h1 align="center">🚀 EmployeeApp</h1>
+<p align="center"><strong>Spring Boot Employee Management – REST API + Thymeleaf UI</strong></p>
 
-🔧 Features
-✔ Model Layer
+---
 
-Employee.java
+## 🏷️ Overview
 
-Contains fields: id, name, role
+**EmployeeApp** is a lightweight, starter-friendly Spring Boot application following the Model–Service–Controller (MSC) architecture.<br>
+It demonstrates REST API development and dynamic UI rendering with Thymeleaf.<br>
+Use it to learn, extend, or as a template for your next employee-centric application!
 
-Includes constructor, getters, and setters
+---
 
+## ✨ Features
 
-✔ Service Layer
+- **Model Layer:**  
+  `Employee.java` – Fields: <kbd>id</kbd>, <kbd>name</kbd>, <kbd>role</kbd>; Constructor, getters, setters.
 
-EmployeeService.java
+- **Service Layer:**  
+  `EmployeeService.java` –  
+    ⤷ Loads sample employees at startup (`@PostConstruct`)  
+    ⤷ Provides methods:
+    - `getAllEmployees()`
+    - `getEmployeeById(int id)`
+    ⤷ Stores data in-memory (`List<Employee>`)
 
-Initializes sample employee data using @PostConstruct
+- **Controller Layer:**  
+  - `EmployeeController` (REST API)
+    - <kbd>GET /api/employees</kbd> — All employees
+    - <kbd>GET /api/employees/{id}</kbd> — By ID
+  - `WebController` (Thymeleaf UI)
+    - <kbd>GET /home</kbd> — Employee list web page
 
-Provides core business operations:
+- **Thymeleaf View:**  
+  `home.html` — Loops through employees, displays name & role.
 
-getAllEmployees()
+---
 
-getEmployeeById(int id)
+## 🗂️ Project Structure
 
-Uses an in-memory List<Employee> (no database yet)
-
-
-✔ Controller Layer
-EmployeeController (REST API)
-
-Base Path: /api/employees
-
-Method	Endpoint	Description
-GET	/api/employees	Get all employees
-GET	/api/employees/{id}	Get employee by ID
-WebController (Thymeleaf UI)
-GET	/home	Displays employees on home page
-
-
-🧩 Thymeleaf View
-home.html
-
-Displays the list of employees
-
-Uses th:each to iterate and show name + role
-
-
-📁 Project Structure
+```plaintext
 src/main/java/com/example/employeeapp/
 │
 ├── controller/
@@ -64,55 +65,57 @@ src/main/java/com/example/employeeapp/
 
 src/main/resources/templates/
 └── home.html
+```
 
+---
 
-🧠 How the App Works
+## 🛠️ Tech Stack
 
-Application starts → EmployeeService loads sample employees.
+- Java 17+
+- Spring Boot (Web, MVC)
+- Thymeleaf
+- Maven
 
-REST clients can access employee data via /api/employees.
+---
 
-UI users can visit /home to view the employee list in a webpage.
+## 🚦 How It Works
 
-Controllers handle routing, service handles logic, model holds data.
+1. Application starts ⇒ Service layer loads sample employees.
+2. **REST API:**  
+   - `GET /api/employees`  
+   - `GET /api/employees/{id}`
+3. **UI:**  
+   - `GET /home` (shows employee table via Thymeleaf)
+4. Controllers route, service processes, model stores!
 
+---
 
-💼 Tech Stack
+## 🏁 Getting Started
 
-Java 17+
-
-Spring Boot (Web, MVC)
-
-Thymeleaf
-
-Maven
-
-
-🏁 Running the Application
+**1. Build & Run:**
+```bash
 mvn spring-boot:run
+```
 
+**2. Open in Browser:**
 
+- 🌐 UI: [`http://localhost:8080/home`](http://localhost:8080/home)
+- 🔗 API: [`http://localhost:8080/api/employees`](http://localhost:8080/api/employees)  
+  [`http://localhost:8080/api/employees/1`](http://localhost:8080/api/employees/1)
 
-Visit in browser:
+---
 
-UI → http://localhost:8080/home
+## 🎯 Purpose
 
-API → http://localhost:8080/api/employees
-      http://localhost:8080/api/employees/1
+- Clean architecture (MSC)
+- Hands-on REST API development
+- Dynamic UI (Thymeleaf)
+- Basic service abstraction
+- In-memory operations
+- **Perfect** for learning or starting your employee management project!
 
+---
 
-🎯 Purpose
-
-This project showcases:
-
-Clean Spring Boot architecture
-
-REST API development
-
-Thymeleaf-based UI rendering
-
-Basic service layer abstraction
-
-In-memory list operations
-
-Perfect as a learning project or starter template.
+<p align="center">
+  <sub>Made with ❤️ by <a href="https://github.com/pallavibaj2005">pallavibaj2005</a></sub>
+</p>
